@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <!--Cabecalho-->
+    <div th:replace="~{layout :: cabecalho}"></div>
+
+    <!--Conteudo da pagina-->
+    <slot>
+        <form action="../insertItem" method="POST" modelAttribute="item">
+            <p></p>
+            <div class="container">
+
+				<div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Nome</label>
+                    <input type="text" class="form-control" name="nome" th:value="${item.nome}" id="formGroupExampleInput2" placeholder="Example input placeholder" required>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Valor</label>
+                    <input type="text" class="form-control" name="valor" th:value="${item.valor}" id="formGroupExampleInput2" placeholder="Example input placeholder" required>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput3" class="form-label">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" th:value="${item.descricao}" id="formGroupExampleInput3" placeholder="Example input placeholder" required>
+                </div>
+
+
+                <input type="submit" class="btn btn-primary" value="Incluir">
+            </div>
+        </form>
+
+    </slot>
+
+    <!--Footer-->
+    <div th:replace="~{layout :: footer}"></div>
+</body>
+</html>
