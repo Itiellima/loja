@@ -33,7 +33,7 @@ public class ItemController {
     @GetMapping(value = "/catalogo")
     public ModelAndView catalogo() {
     	
-    	ModelAndView mav = new ModelAndView("catalogo");
+    	ModelAndView mav = new ModelAndView("itemTemplates/catalogo");
     	mav.addObject("listItem", itemService.getAllItem());
     	return mav;
     	
@@ -44,7 +44,7 @@ public class ItemController {
     @GetMapping(value = "/insertItem")
     public ModelAndView insert(){
 
-        ModelAndView mav = new ModelAndView("insertItem");
+        ModelAndView mav = new ModelAndView("itemTemplates/insertItem");
         mav.addObject("item", new Item());
 
         return mav;
@@ -93,7 +93,7 @@ public class ItemController {
     @GetMapping(value = "/updateItem")
     public ModelAndView update(Integer id) {
     	
-    	ModelAndView mav = new ModelAndView("updateItem");
+    	ModelAndView mav = new ModelAndView("itemTemplates/updateItem");
     	mav.addObject("item", itemService.getItemById(id).get());
     	
     	return mav;

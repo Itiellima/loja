@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
 <body>
@@ -15,16 +17,17 @@
             <div class="container">
 
 				<div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Nome</label>
-                    <input type="text" class="form-control" name="nome" th:value="${item.nome}" id="formGroupExampleInput2" placeholder="Example input placeholder" required>
+                    <label for="formGroupExampleInput1" class="form-label">Nome</label>
+                    <input type="text" class="form-control" name="nome" th:value="${item.nome}" id="formGroupExampleInput1" placeholder="Digite o nome do item" required>
+
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Valor</label>
-                    <input type="text" class="form-control" name="valor" th:value="${item.valor}" id="formGroupExampleInput2" placeholder="Example input placeholder" required>
+                    <input type="number" class="form-control" name="valor" th:value="${item.valor}" id="formGroupExampleInput2" placeholder="Digite o valor do item" step="0.01" required>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput3" class="form-label">Descricao</label>
-                    <input type="text" class="form-control" name="descricao" th:value="${item.descricao}" id="formGroupExampleInput3" placeholder="Example input placeholder" required>
+                    <input type="text" class="form-control" name="descricao" th:value="${item.descricao}" id="formGroupExampleInput3" placeholder="Escreva a descrição do item" required>
                 </div>
 
 
