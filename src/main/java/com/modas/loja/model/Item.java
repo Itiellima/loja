@@ -1,17 +1,14 @@
 package com.modas.loja.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+import java.util.List;
+
+
 @Entity
-@Table(name = "tb_item")
+@Table(name = "item")
 public class Item {
 
 	@Id
@@ -21,7 +18,9 @@ public class Item {
 	private String descricao;
 	private Double valor;
 
-	
+	@OneToMany(mappedBy = "item")
+	private List<ItemImages> itemImagesList;
+
 	
 	public Item() {
 		super();
