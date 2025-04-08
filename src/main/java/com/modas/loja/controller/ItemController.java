@@ -35,9 +35,9 @@ public class ItemController {
     	
     	ModelAndView mav = new ModelAndView("itemTemplates/catalogo");
     	mav.addObject("listItem", itemService.getAllItem());
+
     	return mav;
-    	
-    	
+
         //return new ModelAndView("catalogo", "listItem", itemService.getAllItem());
     }
 

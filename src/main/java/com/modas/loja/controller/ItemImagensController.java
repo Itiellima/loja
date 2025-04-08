@@ -71,7 +71,7 @@ public class ItemImagensController {
                 Files.copy(file.getInputStream(), filepPath, StandardCopyOption.REPLACE_EXISTING);
 
                 ItemImagens imagem = new ItemImagens();
-                imagem.setImg("/uploads/" + filename);
+                imagem.setImg("uploads/" + filename);
                 imagem.setItem(item.get());
 
                 itemImagensService.insertItemImagens(imagem);
@@ -80,6 +80,15 @@ public class ItemImagensController {
 
         }
         return "redirect:/";
+    }
+
+    @GetMapping(value = "/catalogoImagens")
+    public ModelAndView imagemCatalogo(){
+
+        ModelAndView mav = new ModelAndView("/catalogoImagens");
+        mav.addObject("listItem", itemService.getAllItemWithImagens());
+
+        return mav;
     }
 
 }

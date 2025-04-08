@@ -32,6 +32,14 @@ public class Item {
 		this.valor = valor;
 	}
 
+	public List<ItemImagens> getItemImagesList() {
+		return itemImagesList;
+	}
+
+	public void setItemImagesList(List<ItemImagens> itemImagesList) {
+		this.itemImagesList = itemImagesList;
+	}
+
 	public Integer getId() {
 		return id;
 	}
